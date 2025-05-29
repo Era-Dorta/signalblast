@@ -7,7 +7,7 @@ on:
 
 jobs:
   testpypi-publish:
-    name: Upload release to PyPI
+    name: Upload release to TestPyPI
     runs-on: ubuntu-latest
     environment:
       name: testpypi
@@ -36,6 +36,7 @@ jobs:
       uses: pypa/gh-action-pypi-publish@release/v1
       with:
         repository-url: https://test.pypi.org/legacy/
+        verbose: true
 
   pypi-publish:
     name: Upload release to PyPI
