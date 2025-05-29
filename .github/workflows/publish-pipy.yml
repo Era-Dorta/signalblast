@@ -25,7 +25,7 @@ jobs:
       with:
         version: latest
 
-    - name: Create the build
+    - name: Build the wheel
       run: uv build
 
     - name: Publish package distributions to TestPyPI
@@ -53,8 +53,8 @@ jobs:
       with:
         version: latest
 
-    - name: Install the project and its dependencies
-      run: uv sync
+    - name: Build the wheel
+      run: uv build
 
     - name: Publish package distributions to PyPI
       uses: pypa/gh-action-pypi-publish@release/v1
