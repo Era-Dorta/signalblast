@@ -38,31 +38,31 @@ jobs:
         repository-url: https://test.pypi.org/legacy/
         verbose: true
 
-  pypi-publish:
-    name: Upload release to PyPI
-    runs-on: ubuntu-latest
-    environment:
-      name: pypi
-      url: https://pypi.org/p/signalblast
-    permissions:
-      id-token: write
-    steps:
+#   pypi-publish:
+#     name: Upload release to PyPI
+#     runs-on: ubuntu-latest
+#     environment:
+#       name: pypi
+#       url: https://pypi.org/p/signalblast
+#     permissions:
+#       id-token: write
+#     steps:
 
-    - name: Checkout code
-      uses: actions/checkout@v4
-      with:
-        fetch-depth: 0
+#     - name: Checkout code
+#       uses: actions/checkout@v4
+#       with:
+#         fetch-depth: 0
 
-    - name: Install the latest version of uv
-      uses: astral-sh/setup-uv@v3
-      with:
-        version: latest
+#     - name: Install the latest version of uv
+#       uses: astral-sh/setup-uv@v3
+#       with:
+#         version: latest
 
-    - name: Install the project and its dependencies
-      run: uv sync
+#     - name: Install the project and its dependencies
+#       run: uv sync
 
-    - name: Create the build
-      run: uv build
+#     - name: Create the build
+#       run: uv build
 
-    - name: Publish package distributions to PyPI
-      uses: pypa/gh-action-pypi-publish@release/v1
+#     - name: Publish package distributions to PyPI
+#       uses: pypa/gh-action-pypi-publish@release/v1
