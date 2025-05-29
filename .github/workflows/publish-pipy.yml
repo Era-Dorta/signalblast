@@ -26,9 +26,6 @@ jobs:
       with:
         version: latest
 
-    - name: Install the project and its dependencies
-      run: uv sync
-
     - name: Create the build
       run: uv build
 
